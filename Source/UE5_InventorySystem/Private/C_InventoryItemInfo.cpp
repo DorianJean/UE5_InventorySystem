@@ -3,10 +3,27 @@
 
 #include "C_InventoryItemInfo.h"
 
-C_InventoryItemInfo::C_InventoryItemInfo()
+bool UC_InventoryItemInfo::isStackable()
 {
+
+	return MaxQuantity > 1;
 }
 
-C_InventoryItemInfo::~C_InventoryItemInfo()
+FName UC_InventoryItemInfo::GetItemID_Implementation()
 {
+	return Name;
+}
+
+FStackableResult UC_InventoryItemInfo::IsItemStackable_Implementation()
+{
+	FStackableResult Result;
+	Result.isStackable = isStackable();
+	Result.StackSize = MaxQuantity;
+
+	return Result;
+}
+
+UC_InventoryItemInfo* UC_InventoryItemInfo::GetItemAsset_Implementation()
+{
+	return this;
 }
