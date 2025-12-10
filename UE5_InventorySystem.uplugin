@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "UE5_InventorySystem",
+	"Description": "An inventory system that is easy to use, modify, and FREE. Most of the code is written in C++ for optimal performance. You can easily create items and modify the inventory as you wish, as well as an inventory slot. Over time, the plugin will be updated and include more features.",
+	"Category": "Components",
+	"CreatedBy": "Dorian Kupfernagel",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UE5_InventorySystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
