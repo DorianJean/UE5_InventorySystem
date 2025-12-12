@@ -6,19 +6,23 @@
 // Sets default values
 AC_InventoryItem::AC_InventoryItem()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
+	// Static Mesh Setup
+	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
+	RootComponent = StaticMesh;
+
+	// Skeletal Mesh Setup
+	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
+	SkeletalMesh->SetupAttachment(StaticMesh);
 }
 
-// Called when the game starts or when spawned
 void AC_InventoryItem::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void AC_InventoryItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

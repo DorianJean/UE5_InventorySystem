@@ -86,5 +86,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetupSlots(int32 NewInventorySlots);
 
+	UFUNCTION(BlueprintCallable)
+	bool RemoveItemFromIndex(int32 Index);
+
 		
 };

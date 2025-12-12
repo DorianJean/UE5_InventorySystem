@@ -1,4 +1,4 @@
-// Copyright (C) 2025 Dorian Kupfernagel. All Rights Reserved.
+﻿// Copyright (C) 2025 Dorian Kupfernagel. All Rights Reserved.
 
 
 #include "C_InventoryComponent.h"
@@ -101,5 +101,23 @@ void UC_InventoryComponent::SetupSlots(int32 NewInventorySlots)
 
 		InventoryItemList.Add(SlotToAdd);
 	}
+}
+
+bool UC_InventoryComponent::RemoveItemFromIndex(int32 Index)
+{
+	FInventoryItemTypes Slot;
+	if (!GetSlotIndex(Index, Slot))
+	{
+		return false;
+	}
+
+	FInventoryItemTypes EmptyItem;
+	EmptyItem.SlotIndex = Slot.SlotIndex;
+	EmptyItem.InventoryRef = this;
+
+	// Remove Item from Inventory Container
+	SetItem(Slot, EmptyItem);
+
+	return true;
 }
 
