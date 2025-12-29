@@ -12,10 +12,10 @@ struct FStackableResult
     GENERATED_BODY()
 
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stackable Result")
     bool isStackable = false;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stackable Result")
     int32 StackSize = 1;
 
     FStackableResult() = default;

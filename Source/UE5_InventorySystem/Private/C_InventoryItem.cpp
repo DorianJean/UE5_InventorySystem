@@ -2,6 +2,8 @@
 
 
 #include "C_InventoryItem.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 
 // Sets default values
 AC_InventoryItem::AC_InventoryItem()
@@ -10,7 +12,7 @@ AC_InventoryItem::AC_InventoryItem()
 
 	// Static Mesh Setup
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
-	RootComponent = StaticMesh;
+	SetRootComponent(StaticMesh);
 
 	// Skeletal Mesh Setup
 	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));

@@ -4,8 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-#include "Engine/StaticMesh.h"
+#include "Sound/SoundBase.h"
 #include "C_InventoryAssetInterface.h"
+
+class USkeletalMesh;
+class UStaticMesh;
+class UTexture2D;
+
 #include "C_InventoryItemInfo.generated.h"
 
 UENUM(BlueprintType)
@@ -51,9 +56,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General")
 	EItemRarity ItemRarity;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General")
+	float Weight = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General|Visual & Audio")
+	USoundBase* PickupSound = nullptr;
+
 public:
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Inventory Asset Interface")
 	bool isStackable();
 
 	virtual FName GetItemID_Implementation() override;
